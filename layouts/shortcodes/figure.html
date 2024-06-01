@@ -29,7 +29,7 @@
   {{ end }}
 
 
-  {{- with $i := resources.Get $path -}}
+  {{- with $i := $.Page.Resources.GetMatch ($path) -}}
     {{- if eq $i.MediaType.MainType "image" -}}
       {{- if not $width -}}{{- $width = $i.Width -}}{{- end -}}
       {{- if not $height -}}{{- $height = $i.Height -}}{{- end -}}
